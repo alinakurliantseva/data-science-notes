@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Pandas (Kaggle)</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">Pandas</h1>
+    <p class="text-end mb-5"><em>Kaggle</em></p>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Creating, Reading and Writing</button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>There are two core objects in pandas: the <span class="badge rounded-pill bg-secondary">DataFrame</span> and the <span class="badge rounded-pill bg-secondary">Series</span>.</p>
+                    <img src="../img/pandas-kaggle/creating-data-1.PNG" class="mx-auto d-block" alt="Creating data">
+                    <p>In this example, the "0, No" entry has the value of 131. The "0, Yes" entry has a value of 50, and so on.</p>
+                    <p>We are using the <span class="badge rounded-pill bg-secondary">pd.DataFrame()</span> constructor to generate these DataFrame objects. The dictionary-list constructor assigns values to the column labels, but just uses an ascending count from 0 (0, 1, 2, 3, ...) for the row labels. The list of row labels used in a DataFrame is known as an <span class="badge rounded-pill bg-secondary">Index</span>. We can assign values to it by using an index parameter in our constructor:</p>
+                    <img src="../img/pandas-kaggle/creating-data-2.PNG" class="mx-auto d-block" alt="Creating data"><img src="../img/pandas-kaggle/creating-data-3.PNG" class="mx-auto d-block" alt="Creating data">
+                    <p>A Series does not have a column name, it only has one overall name:</p>
+                    <img src="../img/pandas-kaggle/creating-data-4.PNG" class="mx-auto d-block" alt="Creating data"><img src="../img/pandas-kaggle/reading-data-files-1.PNG" class="mx-auto d-block" alt="Reading data files">
+                    <p>A CSV file is a table of values separated by commas. Hence the name: "Comma-Separated Values", or CSV.</p>
+                    <img src="../img/pandas-kaggle/reading-data-files-2.PNG" class="mx-auto d-block" alt="Reading data files"><img src="../img/pandas-kaggle/reading-data-files-3.PNG" class="mx-auto d-block" alt="Reading data files"><img src="../img/pandas-kaggle/creating-reading-and-writing-exercise-1.PNG" class="mx-auto d-block" alt="Creating, reading and writing - exercise"><img src="../img/pandas-kaggle/creating-reading-and-writing-exercise-2.PNG" class="mx-auto d-block" alt="Creating, reading and writing - exercise"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> Indexing, Selecting and Assigning</button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body"><img src="../img/pandas-kaggle/native-accessors-1.PNG" class="mx-auto d-block" alt="Native accessors"><img src="../img/pandas-kaggle/native-accessors-2.PNG" class="mx-auto d-block" alt="Native accessors">
+                    <p>These are the two ways of selecting a specific Series out of a DataFrame. Neither of them is more or less syntactically valid than the other, but the indexing operator [] does have the advantage that it can handle column names with reserved characters in them (e.g. if we had a country providence column, reviews.country providence wouldn't work).</p>
+                    <img src="../img/pandas-kaggle/native-accessors-3.PNG" class="mx-auto d-block" alt="Native accessors">
+                    <p>Pandas has its own accessor operators, loc and iloc. Pandas indexing works in one of two paradigms. The first is <span class="badge rounded-pill bg-secondary">index-based selection</span>: selecting data based on its numerical position in the data. <span class="badge rounded-pill bg-secondary">iloc</span> follows this paradigm. To select the first row of data in a DataFrame, we may use the following:</p>
+                    <img src="../img/pandas-kaggle/index-based-selection-1.PNG" class="mx-auto d-block" alt="Index-based selection">
+                    <p>Both loc and iloc are row-first, column-second. This is the opposite of what we do in native Python, which is column-first, row-second. To get a column with iloc, we can do the following:</p>
+                    <img src="../img/pandas-kaggle/index-based-selection-2.PNG" class="mx-auto d-block" alt="Index-based selection">
+                    <p>On its own, the : operator, which also comes from native Python, means "everything". When combined with other selectors, however, it can be used to indicate a range of values. For example, to select the country column from just the first, second, and third row, we would do:</p>
+                    <img src="../img/pandas-kaggle/index-based-selection-3.PNG" class="mx-auto d-block" alt="Index-based selection">
+                    <p>Or, to select just the second and third entries, we would do:</p>
+                    <img src="../img/pandas-kaggle/index-based-selection-4.PNG" class="mx-auto d-block" alt="Index-based selection">
+                    <p>It's also possible to pass a list:</p>
+                    <img src="../img/pandas-kaggle/index-based-selection-5.PNG" class="mx-auto d-block" alt="Index-based selection">
+                    <p>Finally, it's worth knowing that negative numbers can be used in selection. This will start counting forwards from the end of the values:</p>
+                    <img src="../img/pandas-kaggle/index-based-selection-6.PNG" class="mx-auto d-block" alt="Index-based selection">
+                    <p>The second paradigm for attribute selection is the one followed by the <span class="badge rounded-pill bg-secondary">loc</span> operator: <span class="badge rounded-pill bg-secondary">label-based selection</span>. In this paradigm, it's the data index value, not its position, which matters. For example, to get the first entry in reviews, we would now do the following:</p>
+                    <img src="../img/pandas-kaggle/label-based-selection-1.PNG" class="mx-auto d-block" alt="Label-based selection"><img src="../img/pandas-kaggle/label-based-selection-2.PNG" class="mx-auto d-block" alt="Label-based selection">
+                    <p>iloc uses the Python stdlib indexing scheme, where the first element of the range is included and the last one excluded (0:10 will select entries 0,...,9); loc, meanwhile, indexes inclusively (0:10 will select entries 0,...,10).</p>
+                    <img src="../img/pandas-kaggle/indexing-selecting-and-assigning-exercise-1.PNG" class="mx-auto d-block" alt="Indexing, selecting and assigning - exercise"><img src="../img/pandas-kaggle/manipulating-the-index.PNG" class="mx-auto d-block" alt="Manipulating the index">
+                    <p>This is useful if you can come up with an index for the dataset which is better than the current one.</p>
+                    <img src="../img/pandas-kaggle/conditional-selection-1.PNG" class="mx-auto d-block" alt="Conditional selection">
+                    <p>This operation produced a Series of True/False booleans based on the country of each record. This result can then be used inside of loc to select the relevant data:</p>
+                    <img src="../img/pandas-kaggle/conditional-selection-2.PNG" class="mx-auto d-block" alt="Conditional selection"><img src="../img/pandas-kaggle/conditional-selection-3.PNG" class="mx-auto d-block" alt="Conditional selection"><img src="../img/pandas-kaggle/conditional-selection-4.PNG" class="mx-auto d-block" alt="Conditional selection">
+                    <p>Pandas comes with a few built-in conditional selectors, two of which we will highlight here. The first is <span class="badge rounded-pill bg-secondary">isin</span>:</p>
+                    <img src="../img/pandas-kaggle/conditional-selection-5.PNG" class="mx-auto d-block" alt="Conditional selection">
+                    <p>The second is <span class="badge rounded-pill bg-secondary">isnull</span> (and its companion <span class="badge rounded-pill bg-secondary">notnull</span>). These methods let you highlight values which are (or are not) empty (NaN):</p>
+                    <img src="../img/pandas-kaggle/conditional-selection-6.PNG" class="mx-auto d-block" alt="Conditional selection"><img src="../img/pandas-kaggle/assigning-data.PNG" class="mx-auto d-block" alt="Assigning data"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Summary Functions and Maps</button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body"><img src="../img/pandas-kaggle/summary-functions-1.PNG" class="mx-auto d-block" alt="Summary functions"><img src="../img/pandas-kaggle/summary-functions-2.PNG" class="mx-auto d-block" alt="Summary functions"><img src="../img/pandas-kaggle/summary-functions-3.PNG" class="mx-auto d-block" alt="Summary functions">
+                    <p>To see a list of unique values and how often they occur in the dataset, we can use the <span class="badge rounded-pill bg-secondary">value_counts()</span> method:</p>
+                    <img src="../img/pandas-kaggle/summary-functions-4.PNG" class="mx-auto d-block" alt="Summary functions">
+                    <p><span class="badge rounded-pill bg-secondary">map()</span> returns a new Series where all the values have been transformed by your function:</p>
+                    <img src="../img/pandas-kaggle/maps-1.PNG" class="mx-auto d-block" alt="Maps"><img src="../img/pandas-kaggle/summary-functions-and-maps-exercise-1.PNG" class="mx-auto d-block" alt="Summary functions and maps - exercise"><img src="../img/pandas-kaggle/summary-functions-and-maps-exercise-2.PNG" class="mx-auto d-block" alt="Summary functions and maps - exercise">
+                    <p><span class="badge rounded-pill bg-secondary">apply()</span> is the equivalent method if we want to transform a whole DataFrame by calling a custom method on each row:</p>
+                    <img src="../img/pandas-kaggle/maps-2.PNG" class="mx-auto d-block" alt="Maps"><img src="../img/pandas-kaggle/summary-functions-and-maps-exercise-3.PNG" class="mx-auto d-block" alt="Summary functions and maps - exercise">
+                    <p>If we had called reviews.apply() with axis='index', then instead of passing a function to transform each row, we would need to give a function to transform each column.</p>
+                    <p>Note that map() and apply() return new, transformed Series and DataFrames, respectively. They don't modify the original data they're called on. If we look at the first row of reviews, we can see that it still has its original points value.</p>
+                    <img src="../img/pandas-kaggle/maps-3.PNG" class="mx-auto d-block" alt="Maps">
+                    <p>Pandas provides many common mapping operations as built-ins. For example, here's a faster way of remeaning our points column:</p>
+                    <img src="../img/pandas-kaggle/maps-4.PNG" class="mx-auto d-block" alt="Maps">
+                    <p>In this code we are performing an operation between a lot of values on the left-hand side (everything in the Series) and a single value on the right-hand side (the mean value). Pandas will also understand what to do if we perform these operations between Series of equal length. For example, an easy way of combining country and region information in the dataset would be to do the following:</p>
+                    <img src="../img/pandas-kaggle/maps-5.PNG" class="mx-auto d-block" alt="Maps">
+                    <p>These operators are faster than map() or apply() because they uses speed ups built into pandas. However, they are not as flexible as map() or apply(), which can do more advanced things, like applying conditional logic, which cannot be done with addition and subtraction alone.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/"></script> 
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
