@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Data Cleaning (Kaggle)</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">Data Cleaning</h1>
+    <p class="text-end mb-5"><em>Kaggle</em></p>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Handling Missing Values</button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body"><img src="../img/data-cleaning-kaggle/handling-missing-values-1.PNG" class="mx-auto d-block" alt="Handling missing values"><img src="../img/data-cleaning-kaggle/handling-missing-values-2.PNG" class="mx-auto d-block" alt="Handling missing values"><img src="../img/data-cleaning-kaggle/handling-missing-values-exercise-1.PNG" class="mx-auto d-block" alt="Handling missing values - exercise">
+                    <p><span class="badge rounded-pill bg-secondary">Is this value missing because it wasn't recorded or because it doesn't exist?</span> If a value is missing becuase it doesn't exist (like the height of the oldest child of someone who doesn't have any children) then it doesn't make sense to try and guess what it might be. These values you probably do want to keep as <span class="badge rounded-pill bg-secondary">NaN</span>. If a value is missing because it wasn't recorded, then you can try to guess what it might have been based on the other values in that column and row. This is called <span class="badge rounded-pill bg-secondary">imputation</span>.</p>
+                    <p>If you're in a hurry or don't have a reason to figure out why your values are missing, one option you have is to just remove any rows or columns that contain missing values:</p>
+                    <img src="../img/data-cleaning-kaggle/handling-missing-values-3.PNG" class="mx-auto d-block" alt="Handling missing values"><img src="../img/data-cleaning-kaggle/handling-missing-values-4.PNG" class="mx-auto d-block" alt="Handling missing values"><img src="../img/data-cleaning-kaggle/handling-missing-values-5.PNG" class="mx-auto d-block" alt="Handling missing values">
+                    <p>Another option is to try and fill in the missing values. We can use the Panda's <span class="badge rounded-pill bg-secondary">fillna()</span> function to fill in missing values in a dataframe for us. One option we have is to specify what we want the NaN values to be replaced with:</p>
+                    <img src="../img/data-cleaning-kaggle/handling-missing-values-6.PNG" class="mx-auto d-block" alt="Handling missing values">
+                    <p>I could also be a bit more savvy and replace missing values with whatever value comes directly after it in the same column. (This makes a lot of sense for datasets where the observations have some sort of logical order to them.)</p>
+                    <img src="../img/data-cleaning-kaggle/handling-missing-values-7.PNG" class="mx-auto d-block" alt="Handling missing values"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Scaling and Normalization</button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Parsing Dates</button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">Character Encodings</button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div class="accordion-body"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">Inconsistent Data Entry</button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                <div class="accordion-body"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/"></script> 
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
