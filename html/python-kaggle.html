@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Python (Kaggle)</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">Python</h1>
+    <p class="text-end mb-5"><em>Kaggle</em></p>
+    <img src="../img/python-kaggle/hello-python.PNG" class="mx-auto d-block" alt="Hello, Python"><img src="../img/python-kaggle/functions-and-getting-help-1.PNG" class="mx-auto d-block" alt="Functions and getting help">
+    <p>The <span class="badge rounded-pill bg-secondary">docstring</span> is a triple-quoted string (which may span multiple lines) that comes immediately after the header of a function. When we call <span class="badge rounded-pill bg-secondary">help()</span> on a function, it shows the docstring:</p>
+    <img src="../img/python-kaggle/functions-and-getting-help-2.PNG" class="mx-auto d-block" alt="Functions and getting help">
+    <p>The last two lines of the docstring are an example function call and result. (The &gt;&gt;&gt; is a reference to the command prompt used in Python interactive shells.) Python doesn't run the example call - it's just there for the benefit of the reader. The convention of including 1 or more example calls in a function's docstring is far from universally observed, but it can be very effective at helping someone understand your function.</p>
+    <p>Without a <span class="badge rounded-pill bg-secondary">return</span> statement, least_difference is completely pointless, but a function with side effects may do something useful without returning anything (print() and help() don't return anything).</p>
+    <img src="../img/python-kaggle/functions-and-getting-help-3.PNG" class="mx-auto d-block" alt="Functions and getting help"><img src="../img/python-kaggle/functions-and-getting-help-exercise-1.PNG" class="mx-auto d-block" alt="Functions and getting help - exercise">
+    <div class="row">
+        <div class="col-md"><img src="../img/python-kaggle/booleans-and-conditionals-1.PNG" class="mx-auto d-block" alt="Booleans and conditionals"></div>
+        <div class="col-md">
+            <p>I'm safe from today's weather if...<br>
+                I have an umbrella...<br>
+                or if the rain isn't too heavy and I have a hood...<br>
+                otherwise, I'm still fine unless it's raining and it's a workday.</p>
+        </div>
+    </div>
+    <img src="../img/python-kaggle/booleans-and-conditionals-exercise-1.PNG" class="mx-auto d-block" alt="Booleans and conditionals - exercise"><img src="../img/python-kaggle/booleans-and-conditionals-exercise-2.PNG" class="mx-auto d-block" alt="Booleans and conditionals - exercise"><img src="../img/python-kaggle/booleans-and-conditionals-exercise-3.PNG" class="mx-auto d-block" alt="Booleans and conditionals - exercise"><img src="../img/python-kaggle/booleans-and-conditionals-exercise-4.PNG" class="mx-auto d-block" alt="Booleans and conditionals - exercise"><img src="../img/python-kaggle/booleans-and-conditionals-exercise-5.PNG" class="mx-auto d-block" alt="Booleans and conditionals - exercise"><img src="../img/python-kaggle/booleans-and-conditionals-exercise-6.PNG" class="mx-auto d-block" alt="Booleans and conditionals - exercise"><img src="../img/python-kaggle/booleans-and-conditionals-exercise-7.PNG" class="mx-auto d-block" alt="Booleans and conditionals - exercise">
+    <p><span class="badge rounded-pill bg-secondary">list.append</span> modifies a list by adding an item to the end:</p>
+    <img src="../img/python-kaggle/lists-1.PNG" class="mx-auto d-block" alt="Lists"><img src="../img/python-kaggle/lists-2.PNG" class="mx-auto d-block" alt="Lists">
+    <p><span class="badge rounded-pill bg-secondary">list.pop</span> removes and returns the last element of a list:</p>
+    <img src="../img/python-kaggle/lists-3.PNG" class="mx-auto d-block" alt="Lists"><img src="../img/python-kaggle/lists-4.PNG" class="mx-auto d-block" alt="Lists"><img src="../img/python-kaggle/lists-5.PNG" class="mx-auto d-block" alt="Lists"><img src="../img/python-kaggle/lists-6.PNG" class="mx-auto d-block" alt="Lists">
+    <p>Tuples are almost exactly the same as lists. They differ in just two ways: 1 - the syntax for creating them uses parentheses instead of square brackets; 2 - they cannot be modified (they are immutable).</p>
+    <img src="../img/python-kaggle/lists-7.PNG" class="mx-auto d-block" alt="Lists"><img src="../img/python-kaggle/lists-8.PNG" class="mx-auto d-block" alt="Lists"><img src="../img/python-kaggle/lists-9.PNG" class="mx-auto d-block" alt="Lists">
+    <p>Tuples are often used for functions that have multiple return values. The as_integer_ratio() method of float objects returns a numerator and a denominator in the form of a tuple:</p>
+    <img src="../img/python-kaggle/lists-10.PNG" class="mx-auto d-block" alt="Lists">
+    <p>These multiple return values can be individually assigned as follows:</p>
+    <img src="../img/python-kaggle/lists-11.PNG" class="mx-auto d-block" alt="Lists"><img src="../img/python-kaggle/lists-exercise-1.PNG" class="mx-auto d-block" alt="Lists - exercise"><img src="../img/python-kaggle/loops-and-list-comprehensions-1.PNG" class="mx-auto d-block" alt="Loops and list comprehensions">
+    <p>Here's how we would do the same thing without a list comprehension:</p>
+    <img src="../img/python-kaggle/loops-and-list-comprehensions-2.PNG" class="mx-auto d-block" alt="Loops and list comprehensions"><img src="../img/python-kaggle/loops-and-list-comprehensions-3.PNG" class="mx-auto d-block" alt="Loops and list comprehensions"><img src="../img/python-kaggle/loops-and-list-comprehensions-4.PNG" class="mx-auto d-block" alt="Loops and list comprehensions"><img src="../img/python-kaggle/loops-and-list-comprehensions-5.PNG" class="mx-auto d-block" alt="Loops and list comprehensions">
+    <p>(You could think of these three lines as SELECT, FROM, and WHERE.)</p>
+    <img src="../img/python-kaggle/loops-and-list-comprehensions-6.PNG" class="mx-auto d-block" alt="Loops and list comprehensions">
+    <p>Here's a solution using a list comprehension:</p>
+    <img src="../img/python-kaggle/loops-and-list-comprehensions-7.PNG" class="mx-auto d-block" alt="Loops and list comprehensions"><img src="../img/python-kaggle/loops-and-list-comprehensions-8.PNG" class="mx-auto d-block" alt="Loops and list comprehensions"><img src="../img/python-kaggle/loops-and-list-comprehensions-exercise-1.PNG" class="mx-auto d-block" alt="Loops and list comprehensions - exercise"><img src="../img/python-kaggle/loops-and-list-comprehensions-exercise-2.PNG" class="mx-auto d-block" alt="Loops and list comprehensions - exercise"></div>
+<script src="../js/"></script> 
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
