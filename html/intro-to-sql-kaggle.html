@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Intro to SQL (Kaggle)</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">Intro to SQL</h1>
+    <p class="text-end mb-5"><em>Kaggle</em></p>
+    <p><span class="badge rounded-pill bg-secondary">HAVING</span> is used in combination with <span class="badge rounded-pill bg-secondary">GROUP BY</span> to ignore groups that don't meet certain criteria.</p>
+    <p>Which Hacker News comments generated the most discussion? Since the parent column indicates the comment that was replied to, and the id column has the unique ID used to identify each comment, we can GROUP BY the parent column and COUNT() the id column in order to figure out the number of comments that were made as responses to a specific comment. Since we're only interested in popular comments, we'll look at comments with more than ten replies:</p>
+    <img src="../img/intro-to-sql-kaggle/group-by-having-count-1.PNG" class="mx-auto d-block" alt="Group by, having and count">
+    <p>If you are ever unsure what to put inside the COUNT() function, you can do <span class="badge rounded-pill bg-secondary">COUNT(1)</span> to count the rows in each group. Most people find it especially readable, because we know it's not focusing on other columns:</p>
+    <img src="../img/intro-to-sql-kaggle/group-by-having-count-2.PNG" class="mx-auto d-block" alt="Group by, having and count"><img src="../img/intro-to-sql-kaggle/group-by-having-count-exercise-1.PNG" class="mx-auto d-block" alt="Group by, having and count - exercise">
+    <p>If you have any GROUP BY clause, then all variables must be passed to either a GROUP BY command, or an aggregation function:</p>
+    <img src="../img/intro-to-sql-kaggle/group-by-having-count-3.PNG" class="mx-auto d-block" alt="Group by, having and count">
+    <p>(parent was passed to a GROUP BY command (GROUP BY parent), id was passed to an aggregate function (COUNT(id)))</p>
+    <img src="../img/intro-to-sql-kaggle/order-by-exercise-1.PNG" class="mx-auto d-block" alt="Order by - exercise">
+    <p>This query won't work (the author column isn't passed to an aggregate function or a GROUP BY clause):</p>
+    <img src="../img/intro-to-sql-kaggle/group-by-having-count-4.PNG" class="mx-auto d-block" alt="Group by, having and count"></div>
+<script src="../js/"></script> 
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
