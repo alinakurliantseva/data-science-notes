@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Advanced SQL (Kaggle)</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">Advanced SQL</h1>
+    <p class="text-end mb-5"><em>Kaggle</em></p>
+    <img src="../img/advanced-sql-kaggle/joins-and-unions-1.PNG" class="mx-auto d-block" alt="Joins and unions">
+    <p>We can use an <span class="badge rounded-pill bg-secondary">INNER JOIN</span> to pull rows from both tables where the value in the Pet_ID column in the owners table has a match in the ID column of the pets table (Veronica Dunn and Maisie are not included in the results):</p>
+    <img src="../img/advanced-sql-kaggle/joins-and-unions-2.PNG" class="mx-auto d-block" alt="Joins and unions">
+    <p>Replacing INNER JOIN in the query above with <span class="badge rounded-pill bg-secondary">LEFT JOIN</span> returns all rows where the two tables have matching entries, along with all of the rows in the left table (whether there is a match or not). If we instead use a <span class="badge rounded-pill bg-secondary">RIGHT JOIN</span>, we get the matching rows, along with all rows in the right table (whether there is a match or not). ("left" refers to the table that appears before the JOIN in the query, "right" refers to the table that is after the JOIN)</p>
+    <p>A <span class="badge rounded-pill bg-secondary">FULL JOIN</span> returns all rows from both tables. Note that in general, any row that does not have a match in both tables will have NULL entries for the missing values.</p>
+    <img src="../img/advanced-sql-kaggle/joins-and-unions-3.PNG" class="mx-auto d-block" alt="Joins and unions">
+    <p>As you've seen, JOINs horizontally combine results from different tables. If you instead would like to vertically concatenate columns, you can do so with a UNION. Note that with a UNION, the data types of both columns must be the same, but the column names can be different.</p>
+    <p>We use <span class="badge rounded-pill bg-secondary">UNION ALL</span> to include duplicate values - you'll notice that 9 appears in both the owners table and the pets table, and shows up twice in the concatenated results. If you'd like to drop duplicate values, you need only change UNION ALL in the query to <span class="badge rounded-pill bg-secondary">UNION DISTINCT</span>.</p>
+    <img src="../img/advanced-sql-kaggle/joins-and-unions-4.PNG" class="mx-auto d-block" alt="Joins and unions">
+    <p>We can use two different JOINs to link together information from all three tables, in a single query:</p>
+    <img src="../img/advanced-sql-kaggle/joins-and-unions-5.PNG" class="mx-auto d-block" alt="Joins and unions"><img src="../img/advanced-sql-kaggle/joins-and-unions-exercise-1.PNG" class="mx-auto d-block" alt="Joins and unions - exercise"><img src="../img/advanced-sql-kaggle/joins-and-unions-exercise-2.PNG" class="mx-auto d-block" alt="Joins and unions - exercise"><img src="../img/advanced-sql-kaggle/joins-and-unions-exercise-3.PNG" class="mx-auto d-block" alt="Joins and unions - exercise"></div>
+<script src="../js/"></script> 
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
