@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Advanced SQL (Kaggle)</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">Advanced SQL</h1>
+    <p class="text-end mb-5"><em>Kaggle</em></p>
+    <img src="../img/advanced-sql-kaggle/joins-and-unions-1.PNG" class="mx-auto d-block" alt="Joins and unions">
+    <p>We can use an <span class="badge rounded-pill bg-secondary">INNER JOIN</span> to pull rows from both tables where the value in the Pet_ID column in the owners table has a match in the ID column of the pets table (Veronica Dunn and Maisie are not included in the results):</p>
+    <img src="../img/advanced-sql-kaggle/joins-and-unions-2.PNG" class="mx-auto d-block" alt="Joins and unions">
+    <p>Replacing INNER JOIN in the query above with <span class="badge rounded-pill bg-secondary">LEFT JOIN</span> returns all rows where the two tables have matching entries, along with all of the rows in the left table (whether there is a match or not). If we instead use a <span class="badge rounded-pill bg-secondary">RIGHT JOIN</span>, we get the matching rows, along with all rows in the right table (whether there is a match or not). ("left" refers to the table that appears before the JOIN in the query, "right" refers to the table that is after the JOIN)</p>
+    <p>A <span class="badge rounded-pill bg-secondary">FULL JOIN</span> returns all rows from both tables. Note that in general, any row that does not have a match in both tables will have NULL entries for the missing values.</p>
+    <img src="../img/advanced-sql-kaggle/joins-and-unions-3.PNG" class="mx-auto d-block" alt="Joins and unions">
+    <p>As you've seen, JOINs horizontally combine results from different tables. If you instead would like to vertically concatenate columns, you can do so with a UNION. Note that with a UNION, the data types of both columns must be the same, but the column names can be different.</p>
+    <p>We use <span class="badge rounded-pill bg-secondary">UNION ALL</span> to include duplicate values - you'll notice that 9 appears in both the owners table and the pets table, and shows up twice in the concatenated results. If you'd like to drop duplicate values, you need only change UNION ALL in the query to <span class="badge rounded-pill bg-secondary">UNION DISTINCT</span>.</p>
+    <img src="../img/advanced-sql-kaggle/joins-and-unions-4.PNG" class="mx-auto d-block" alt="Joins and unions">
+    <p>We can use two different JOINs to link together information from all three tables, in a single query:</p>
+    <img src="../img/advanced-sql-kaggle/joins-and-unions-5.PNG" class="mx-auto d-block" alt="Joins and unions"><img src="../img/advanced-sql-kaggle/joins-and-unions-exercise-1.PNG" class="mx-auto d-block" alt="Joins and unions - exercise"><img src="../img/advanced-sql-kaggle/joins-and-unions-exercise-2.PNG" class="mx-auto d-block" alt="Joins and unions - exercise"><img src="../img/advanced-sql-kaggle/joins-and-unions-exercise-3.PNG" class="mx-auto d-block" alt="Joins and unions - exercise">
+    <p>To calculate a moving average of the training times for each runner, where we always take the average of the current and previous training sessions:</p>
+    <img src="../img/advanced-sql-kaggle/analytic-functions-1.PNG" class="mx-auto d-block" alt="Analytic functions">
+    <p>All analytic functions have an <span class="badge rounded-pill bg-secondary">OVER</span> clause, which defines the sets of rows used in each calculation. The OVER clause has three (optional) parts:</p>
+    <ul>
+        <li>The <span class="badge rounded-pill bg-secondary">PARTITION BY</span> clause divides the rows of the table into different groups. In the query above, we divide by id so that the calculations are separated by runner.</li>
+        <li>The <span class="badge rounded-pill bg-secondary">ORDER BY</span> clause defines an ordering within each partition. In the sample query, ordering by the date column ensures that earlier training sessions appear first.</li>
+        <li>The final clause (<span class="badge rounded-pill bg-secondary">ROWS BETWEEN 1 PRECEDING AND CURRENT ROW</span>) is known as a <span class="badge rounded-pill bg-secondary">window frame</span> clause. It identifies the set of rows used in each calculation. We can refer to this group of rows as a <span class="badge rounded-pill bg-secondary">window</span>.</li>
+    </ul>
+    <img src="../img/advanced-sql-kaggle/analytic-functions-2.PNG" class="mx-auto d-block" alt="Analytic functions">
+    <p>There are many ways to write window frame clauses:</p>
+    <ul>
+        <li><span class="badge rounded-pill bg-secondary">ROWS BETWEEN 1 PRECEDING AND CURRENT ROW</span> - the previous row and the current row.</li>
+        <li><span class="badge rounded-pill bg-secondary">ROWS BETWEEN 3 PRECEDING AND 1 FOLLOWING</span> - the 3 previous rows, the current row, and the following row.</li>
+        <li><span class="badge rounded-pill bg-secondary">ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING</span> - all rows in the partition.</li>
+    </ul>
+    <p><span class="badge rounded-pill bg-secondary">Analytic aggregate functions</span>:</p>
+    <p>As you might recall, AVG() (from the example above) is an aggregate function. The OVER clause is what ensures that it's treated as an analytic (aggregate) function. Aggregate functions take all of the values within the window as input and return a single value.</p>
+    <ul>
+        <li><span class="badge rounded-pill bg-secondary">MIN()</span> (or <span class="badge rounded-pill bg-secondary">MAX()</span>) - Returns the minimum (or maximum) of input values.</li>
+        <li><span class="badge rounded-pill bg-secondary">AVG()</span> (or <span class="badge rounded-pill bg-secondary">SUM()</span>) - Returns the average (or sum) of input values.</li>
+        <li><span class="badge rounded-pill bg-secondary">COUNT()</span> - Returns the number of rows in the input.</li>
+    </ul>
+    <p><span class="badge rounded-pill bg-secondary">Analytic navigation functions</span>:</p>
+    <p>Navigation functions assign a value based on the value in a (usually) different row than the current row.</p>
+    <ul>
+        <li><span class="badge rounded-pill bg-secondary">FIRST_VALUE()</span> (or <span class="badge rounded-pill bg-secondary">LAST_VALUE()</span>) - Returns the first (or last) value in the input.</li>
+        <li><span class="badge rounded-pill bg-secondary">LEAD()</span> (and <span class="badge rounded-pill bg-secondary">LAG()</span>) - Returns the value on a subsequent (or preceding) row.</li>
+    </ul>
+    <p><span class="badge rounded-pill bg-secondary">Analytic numbering functions</span>:</p>
+    <p>Numbering functions assign integer values to each row based on the ordering.</p>
+    <ul>
+        <li><span class="badge rounded-pill bg-secondary">ROW_NUMBER()</span> - Returns the order in which rows appear in the input (starting with 1).</li>
+        <li><span class="badge rounded-pill bg-secondary">RANK()</span> - All rows with the same value in the ordering column receive the same rank value, where the next row receives a rank value which increments by the number of rows with the previous rank value.</li>
+    </ul>
+    <img src="../img/advanced-sql-kaggle/analytic-functions-3.PNG" class="mx-auto d-block" alt="Analytic functions"><img src="../img/advanced-sql-kaggle/analytic-functions-4.PNG" class="mx-auto d-block" alt="Analytic functions">
+    <p>The query uses a common table expression (CTE) to first calculate the daily number of trips. Then, we use SUM() as an aggregate function. Since there is no PARTITION BY clause, the entire table is treated as a single partition. The ORDER BY clause orders the rows by date, where earlier dates appear first. By setting the window frame clause to ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW, we ensure that all rows up to and including the current date are used to calculate the (cumulative) sum.</p>
+</div>
+<script src="../js/"></script> 
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
