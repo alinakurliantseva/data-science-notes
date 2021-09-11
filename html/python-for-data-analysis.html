@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Python for Data Analysis (Wes McKinney)</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">Python for Data Analysis</h1>
+    <p class="text-end mb-5"><em>Wes McKinney</em></p>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Python Language Basics, IPython, and Jupyter Notebooks</button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>Tab completion:</p>
+                    <img src="../img/python-for-data-analysis/python-language-basics-ipython-and-jupyter-notebooks-1.PNG" class="mx-auto d-block" alt="Python Language Basics, IPython, and Jupyter Notebooks"><img src="../img/python-for-data-analysis/python-language-basics-ipython-and-jupyter-notebooks-2.PNG" class="mx-auto d-block" alt="Python Language Basics, IPython, and Jupyter Notebooks"><img src="../img/python-for-data-analysis/python-language-basics-ipython-and-jupyter-notebooks-3.PNG" class="mx-auto d-block" alt="Python Language Basics, IPython, and Jupyter Notebooks">
+                    <p>When assigning a variable in Python, you are creating a <span class="badge rounded-pill bg-secondary">reference</span> to the object on the righthand side of the equals sign. In some languages, this assignment would cause the data [1, 2, 3] to be copied; in Python, a and b actually now refer to the same object, the original list [1, 2, 3]:</p>
+                    <img src="../img/python-for-data-analysis/python-language-basics-ipython-and-jupyter-notebooks-4.PNG" class="mx-auto d-block" alt="Python Language Basics, IPython, and Jupyter Notebooks">
+                    <p>When you pass objects as arguments to a function, new local variables are created referencing the original objects without any copying:</p>
+                    <img src="../img/python-for-data-analysis/python-language-basics-ipython-and-jupyter-notebooks-5.PNG" class="mx-auto d-block" alt="Python Language Basics, IPython, and Jupyter Notebooks">
+                    <p>To check if two references refer to the same object, use the <span class="badge rounded-pill bg-secondary">is</span> keyword. <span class="badge rounded-pill bg-secondary">is not</span> is also perfectly valid if you want to check that two objects are not the same:</p>
+                    <img src="../img/python-for-data-analysis/python-language-basics-ipython-and-jupyter-notebooks-6.PNG" class="mx-auto d-block" alt="Python Language Basics, IPython, and Jupyter Notebooks">
+                    <p>Since <span class="badge rounded-pill bg-secondary">list</span> always creates a new Python list (i.e., a copy), we can be sure that c is distinct from a. Comparing with <span class="badge rounded-pill bg-secondary">is</span> is not the same as the <span class="badge rounded-pill bg-secondary">==</span> operator, because in this case we have:</p>
+                    <img src="../img/python-for-data-analysis/python-language-basics-ipython-and-jupyter-notebooks-7.PNG" class="mx-auto d-block" alt="Python Language Basics, IPython, and Jupyter Notebooks">
+                    <p>A very common use of <span class="badge rounded-pill bg-secondary">is</span> and <span class="badge rounded-pill bg-secondary">is not</span> is to check if a variable is <span class="badge rounded-pill bg-secondary">None</span>, since there is only one instance of None:</p>
+                    <img src="../img/python-for-data-analysis/python-language-basics-ipython-and-jupyter-notebooks-8.PNG" class="mx-auto d-block" alt="Python Language Basics, IPython, and Jupyter Notebooks">
+                    <p><span class="badge rounded-pill bg-secondary">None</span> is a common default value for function arguments:</p>
+                    <img src="../img/python-for-data-analysis/python-language-basics-ipython-and-jupyter-notebooks-9.PNG" class="mx-auto d-block" alt="Python Language Basics, IPython, and Jupyter Notebooks">
+                    <p><span class="badge rounded-pill bg-secondary">pass</span> can be used in blocks where no action is to be taken (or as a placeholder for code not yet implemented); it is only required because Python uses whitespace to delimit blocks:</p>
+                    <img src="../img/python-for-data-analysis/python-language-basics-ipython-and-jupyter-notebooks-10.PNG" class="mx-auto d-block" alt="Python Language Basics, IPython, and Jupyter Notebooks">
+                    <p>The <span class="badge rounded-pill bg-secondary">range</span> function returns an iterator that yields a sequence of evenly spaced integers:</p>
+                    <img src="../img/python-for-data-analysis/python-language-basics-ipython-and-jupyter-notebooks-11.PNG" class="mx-auto d-block" alt="Python Language Basics, IPython, and Jupyter Notebooks"><img src="../img/python-for-data-analysis/python-language-basics-ipython-and-jupyter-notebooks-12.PNG" class="mx-auto d-block" alt="Python Language Basics, IPython, and Jupyter Notebooks">
+                    <p>Both a start, end, and step (which may be negative) can be given:</p>
+                    <img src="../img/python-for-data-analysis/python-language-basics-ipython-and-jupyter-notebooks-13.PNG" class="mx-auto d-block" alt="Python Language Basics, IPython, and Jupyter Notebooks">
+                    <p>As you can see, range produces integers up to but not including the endpoint. A common use of range is for iterating through sequences by index:</p>
+                    <img src="../img/python-for-data-analysis/python-language-basics-ipython-and-jupyter-notebooks-14.PNG" class="mx-auto d-block" alt="Python Language Basics, IPython, and Jupyter Notebooks">
+                    <p>A <span class="badge rounded-pill bg-secondary">ternary expression</span> in Python allows you to combine an if-else block that produces a value into a single line or expression:</p>
+                    <img src="../img/python-for-data-analysis/python-language-basics-ipython-and-jupyter-notebooks-15.PNG" class="mx-auto d-block" alt="Python Language Basics, IPython, and Jupyter Notebooks"><img src="../img/python-for-data-analysis/python-language-basics-ipython-and-jupyter-notebooks-16.PNG" class="mx-auto d-block" alt="Python Language Basics, IPython, and Jupyter Notebooks"><img src="../img/python-for-data-analysis/python-language-basics-ipython-and-jupyter-notebooks-17.PNG" class="mx-auto d-block" alt="Python Language Basics, IPython, and Jupyter Notebooks"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Built-in Data Structures, Functions, and Files</button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>Unpacking tuples:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-1.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>Even sequences with nested tuples can be unpacked:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-2.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>To swap variable names:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-3.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>A common use of variable unpacking is iterating over sequences of tuples or lists:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-4.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>The Python language recently acquired some more advanced tuple unpacking to help with situations where you may want to "pluck" a few elements from the beginning of a tuple. This uses the special syntax <span class="badge rounded-pill bg-secondary">*rest</span>, which is also used in function signatures to capture an arbitrarily long list of positional arguments:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-5.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>This rest bit is sometimes something you want to discard; there is nothing special about the rest name. As a matter of convention, many Python programmers will use the underscore (_) for unwanted variables:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-6.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>Since the size and contents of a tuple cannot be modified, it is very light on instance methods. A particularly useful one (also available on lists) is <span class="badge rounded-pill bg-secondary">count</span>, which counts the number of occurrences of a value:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-7.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>Elements can be appended to the end of the list with the <span class="badge rounded-pill bg-secondary">append</span> method:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-8.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>Using <span class="badge rounded-pill bg-secondary">insert</span> you can insert an element at a specific location in the list:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-9.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>The inverse operation to insert is <span class="badge rounded-pill bg-secondary">pop</span>, which removes and returns an element at a particular index:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-10.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>Elements can be removed by value with <span class="badge rounded-pill bg-secondary">remove</span>, which locates the first such value and removes it from the last:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-11.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>Check if a list contains a value using the <span class="badge rounded-pill bg-secondary">in</span> keyword:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-12.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>The keyword <span class="badge rounded-pill bg-secondary">not</span> can be used to negate <span class="badge rounded-pill bg-secondary">in</span>:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-13.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>If you have a list already defined, you can append multiple elements to it using the <span class="badge rounded-pill bg-secondary">extend</span> method:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-14.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>You can sort a list in-place (without creating a new object) by calling its <span class="badge rounded-pill bg-secondary">sort</span> function:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-15.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>You can select sections of most sequence types by using slice notation, which in its basic form consists of <span class="badge rounded-pill bg-secondary">start:stop</span> passed to the indexing operator []:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-16.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>Slices can also be assigned to with a sequence:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-17.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>While the element at the start index is included, the stop index is not included, so that the number of elements in the result is <span class="badge rounded-pill bg-secondary">stop - start</span>.</p>
+                    <p>Either the start or stop can be omitted, in which case they default to the start of the sequence and the end of the sequence, respectively:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-18.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>Negative indices slice the sequence relative to the end:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-19.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>A <span class="badge rounded-pill bg-secondary">step</span> can also be used after a second colon to, say, take every other element:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-20.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files"><img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-21.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>It's common when iterating over a sequence to want to keep track of the index of the current item:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-22.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>Since this is so common, Python has a built-in function, <span class="badge rounded-pill bg-secondary">enumerate</span>, which returns a sequence of (i, value) tuples:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-23.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files"><img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-24.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files"><img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-25.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>The <span class="badge rounded-pill bg-secondary">sorted</span> function returns a new sorted list from the elements of any sequence:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-26.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files"><img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-27.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files"><img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-28.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>You can check if a dict contains a key using the same syntax used for checking whether a list or tuple contains a value:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-29.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>You can delete values either using the <span class="badge rounded-pill bg-secondary">del</span> keyword or the <span class="badge rounded-pill bg-secondary">pop</span> method (which simultaneously returns the value and deletes the key):</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-30.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>The <span class="badge rounded-pill bg-secondary">keys</span> and <span class="badge rounded-pill bg-secondary">values</span> method give you iterators of the dict's keys and values, respectively:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-31.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files"><img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-32.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>You can merge one dict into another using the <span class="badge rounded-pill bg-secondary">update</span> method:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-33.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>A <span class="badge rounded-pill bg-secondary">list comprehension</span> looks like this:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-34.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files"><img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-35.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files"><img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-36.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>A <span class="badge rounded-pill bg-secondary">dict comprehension</span> looks like this:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-37.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files"><img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-38.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>There is no issue with having multiple <span class="badge rounded-pill bg-secondary">return</span> statements. If Python reaches the end of a function without encountering a return statement, <span class="badge rounded-pill bg-secondary">None</span> is returned automatically.</p>
+                    <p>Each function can have <span class="badge rounded-pill bg-secondary">positional</span> arguments and <span class="badge rounded-pill bg-secondary">keyword</span> arguments. Keyword arguments are most commonly used to specify default values or optional arguments. In the preceding function, x and y are positional arguments while z is a keyword argument. This means that the function can be called in any of these ways:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-39.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>The main restriction on function arguments is that the keyword arguments must follow the positional arguments (if any).</p>
+                    <p>It is possible to use keywords for passing positional arguments as well:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-40.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files">
+                    <p>To declare an anonymous (<span class="badge rounded-pill bg-secondary">lambda</span>) function:</p>
+                    <img src="../img/python-for-data-analysis/built-in-data-structures-functions-and-files-41.PNG" class="mx-auto d-block" alt="Built-in Data Structures, Functions, and Files"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">NumPy Basics: Arrays and Vectorized Computation</button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>The easiest way to create an array is to use the <span class="badge rounded-pill bg-secondary">array</span> function:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-1.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>Nested sequences, like a list of equal-length lists, will be converted into a multidimensional array:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-2.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p><span class="badge rounded-pill bg-secondary">zeros</span> and <span class="badge rounded-pill bg-secondary">ones</span> create arrays of 0s or 1s, respectively, with a given length or shape, <span class="badge rounded-pill bg-secondary">empty</span> creates an array without initializing its values to any particular value:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-3.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation"><img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-4.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>It's not safe to assume that np.empty will return an array of all zeros. In some cases, it may return uninitialized "garbage" values.</p>
+                    <p>You can explicitly convert or cast an array from one dtype to another using ndarray's <span class="badge rounded-pill bg-secondary">astype</span> method:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-5.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>Calling astype always creates a new array (a copy of the data), even if the new dtype is the same as the old dtype.</p>
+                    <p>Arrays are important because they enable you to express batch operations on data without writing any for loops. NumPy users call this <span class="badge rounded-pill bg-secondary">vectorization</span>.</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-6.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation"><img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-7.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation"><img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-8.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>Array slices are <span class="badge rounded-pill bg-secondary">views</span> on the original array; this means that the data is not copied, and any modifications to the view will be reflected in the source array:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-9.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation"><img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-10.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation"><img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-11.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>The "bare" slice [:] will assign to all values in an array:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-12.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>As NumPy has been designed to be able to work with very large arrays, you could imagine performance and memory problems if NumPy insisted on always copying data. If you want a copy of a slice of an ndarray instead of a view, you will need to explicitly copy the array - for example, <span class="badge rounded-pill bg-secondary">arr[5:8].copy()</span>.</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-13.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation"><img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-14.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation"><img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-15.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation"><img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-16.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation"><img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-17.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>This expression is the same as though we had indexed in two steps:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-18.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>You can pass multiple slices just like you can pass multiple indexes:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-19.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation"><img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-20.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation"><img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-21.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation"><img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-22.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>Suppose each name corresponds to a row in the data array and we wanted to select all the rows with corresponding name "Bob". Like arithmetic operations, comparisons (such as ==) with arrays are also <span class="badge rounded-pill bg-secondary">vectorized</span>. Thus, comparing names with the string "Bob" yields a boolean array:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-23.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>This boolean array can be passed when indexing the array:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-24.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation"><img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-25.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>To select everything but "Bob", you can either use <span class="badge rounded-pill bg-secondary">!=</span> or negate the condition using <span class="badge rounded-pill bg-secondary">~</span>:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-26.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>The <span class="badge rounded-pill bg-secondary">~</span> operator can be useful when you want to invert a general condition:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-27.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>Selecting two of the three names to combine multiple boolean conditions, use boolean arithmetic operators like <span class="badge rounded-pill bg-secondary">&amp;</span> (and) and <span class="badge rounded-pill bg-secondary">|</span> (or):</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-28.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>Selecting data from an array by boolean indexing always creates a copy of the data, even if the returned array is unchanged.</p>
+                    <p>Setting values with boolean arrays works in a common-sense way. To set all of the negative values in data to 0 we need only do:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-29.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>Setting whole rows or columns using a one-dimensional boolean array is also easy:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-30.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>A universal function, or <span class="badge rounded-pill bg-secondary">ufunc</span>, is a function that performs element-wise operations on data in ndarrays.</p>
+                    <p>Many ufuncs are simple element-wise transformations, like <span class="badge rounded-pill bg-secondary">sqrt</span> or <span class="badge rounded-pill bg-secondary">exp</span>. These are referred to as <span class="badge rounded-pill bg-secondary">unary</span> ufuncs:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-31.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>Others, such as <span class="badge rounded-pill bg-secondary">add</span> or <span class="badge rounded-pill bg-secondary">maximum</span>, take two arrays (thus, <span class="badge rounded-pill bg-secondary">binary</span> ufuncs) and return a single array as the result:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-32.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>The <span class="badge rounded-pill bg-secondary">numpy.where</span> function is a vectorized version of the ternary expression <span class="badge rounded-pill bg-secondary">x if condition else y</span>:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-33.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>Suppose we wanted to take a value from xarr whenever the corresponding value in cond is True, and otherwise take the value from yarr. A list comprehension doing this might look like:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-34.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>This has multiple problems. First, it will not be very fast for large arrays (because all the work is being done in interpreted Python code). Second, it will not work with multidimensional arrays. With np.where you can write this very concisely:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-35.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>The second and third arguments to np.where don't need to be arrays; one or both of them can be scalars. A typical use of where in data analysis is to produce a new array of values based on another array. Suppose you had a matrix of randomly generated data and you wanted to replace all positive values with 2 and all negative values with -2:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-36.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation"><img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-37.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>You can combine scalars and arrays when using np.where:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-38.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>A set of mathematical functions that compute statistics about an entire array or about the data along an axis are accessible as methods of the array class. You can use aggregations (often called <span class="badge rounded-pill bg-secondary">reductions</span>) like sum, mean, and std (standard deviation) either by calling the array instance method or using the top-level NumPy function:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-39.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>Functions like mean and sum take an optional axis argument that computes the statistic over the given <span class="badge rounded-pill bg-secondary">axis</span>, resulting in an array with one fewer dimension:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-40.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>Here, arr.mean(1) means "compute mean across the columns" where arr.sum(0) means "compute sum down the rows".</p>
+                    <p>Boolean values are coerced to 1 (True) and 0 (False) in the preceding methods. Thus, <span class="badge rounded-pill bg-secondary">sum</span> is often used as a means of counting True values in a boolean array:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-41.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>There are two additional methods, <span class="badge rounded-pill bg-secondary">any</span> (tests whether one or more values in an array is True) and <span class="badge rounded-pill bg-secondary">all</span> (checks if every value is True), useful especially for boolean arrays:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-42.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>These methods also work with non-boolean arrays, where non-zero elements evaluate to True.</p>
+                    <p>NumPy has some basic set operations for one-dimensional ndarrays. A commonly used one is <span class="badge rounded-pill bg-secondary">np.unique</span>, which returns the sorted unique values in an array:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-43.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation">
+                    <p>Another function, <span class="badge rounded-pill bg-secondary">np.in1d</span>, tests membership of the values in one array in another, returning a boolean array:</p>
+                    <img src="../img/python-for-data-analysis/numpy-basics-arrays-and-vectorized-computation-44.PNG" class="mx-auto d-block" alt="NumPy Basics: Arrays and Vectorized Computation"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">Getting Started with pandas</button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>While pandas adopts many coding idioms from NumPy, the biggest difference is that pandas is designed for working with tabular or heterogeneous data. NumPy, by contrast, is best suited for working with homogeneous numerical array data.</p>
+                    <p>A <span class="badge rounded-pill bg-secondary">Series</span> is a one-dimensional array-like object containing a sequence of values (of similar types to NumPy types) and an associated array of data labels, called its <span class="badge rounded-pill bg-secondary">index</span>:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-1.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Since we did not specify an index for the data, a default one consisting of the integers 0 through N - 1 (where N is the length of the data) is created.</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-2.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-3.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-4.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-5.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Another way to think about a Series is as a fixed-length, ordered dict, as it is a mapping of index values to data values:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-6.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-7.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Should you have data contained in a Python dict, you can create a Series from it by passing the dict:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-8.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>When you are only passing a dict, the index in the resulting Series will have the dict's keys in sorted order. You can override this by passing the dict keys in the order you want them to appear in the resulting Series:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-9.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Here, three values found in sdata were placed in the appropriate locations, but since no value for 'California' was found, it appears as <span class="badge rounded-pill bg-secondary">NaN</span> (not a number), which is considered in pandas to mark missing or NA values. Since 'Utah' was not included in states, it is excluded from the resulting object.</p>
+                    <p>The <span class="badge rounded-pill bg-secondary">isnull</span> and <span class="badge rounded-pill bg-secondary">notnull</span> functions in pandas should be used to detect missing data:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-10.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-11.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Series also has these as instance methods:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-12.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>A useful Series feature for many applications is that it automatically aligns by index label in arithmetic operations:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-13.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>A Series's index can be altered in-place by assignment:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-14.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>A <span class="badge rounded-pill bg-secondary">DataFrame</span> represents a rectangular table of data and contains an ordered collection of columns, each of which can be a different value type (numeric, string, boolean, etc.). The DataFrame has both a row and column index; it can be thought of as a dict of Series all sharing the same index.</p>
+                    <p>There are many ways to construct a DataFrame, though one of the most common is from a dict of equal-length lists or NumPy arrays:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-15.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>The resulting DataFrame will have its index assigned automatically as with Series, and the columns are placed in sorted order:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-16.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>If you specify a sequence of columns, the DataFrame's columns will be arranged in that order:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-17.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>If you pass a column that isn't contained in the dict, it will appear with missing values in the result:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-18.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-19.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>A column in a DataFrame can be retrieved as a Series either by dict-like notation or by attribute:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-20.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Attribute-like access (e.g., frame2.year) and tab completion of column names in IPython is provided as a convenience. frame2[column] works for any column name, but frame2.column only works when the column name is a valid Python variable name.</p>
+                    <p>Columns can be modified by assignment:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-21.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-22.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>To add a new column of boolean values where the state column equals 'Ohio' (New columns cannot be created with the frame2.eastern syntax.):</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-23.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>The <span class="badge rounded-pill bg-secondary">del</span> method can then be used to remove this column:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-24.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>The column returned from indexing a DataFrame is a <span class="badge rounded-pill bg-secondary">view</span> on the underlying data, not a copy. Thus, any in-place modifications to the Series will be reflected in the DataFrame. The column can be explicitly copied with the Series's <span class="badge rounded-pill bg-secondary">copy</span> method.</p>
+                    <p>Another common form of data is a nested dict of dicts:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-25.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>If the nested dict is passed to the DataFrame, pandas will interpret the outer dict keys as the columns and the inner keys as the row indices:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-26.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-27.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-28.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-29.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>If a DataFrame's <span class="badge rounded-pill bg-secondary">index</span> and <span class="badge rounded-pill bg-secondary">columns</span> have their <span class="badge rounded-pill bg-secondary">name</span> attributes set, these will also be displayed:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-30.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Selections with duplicate labels will select all occurrences of that label.</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-31.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Calling <span class="badge rounded-pill bg-secondary">reindex</span> on this Series rearranges the data according to the new index, introducing missing values if any index values were not already present:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-32.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>For ordered data like time series, it may be desirable to do some interpolation or filling of values when reindexing. The <span class="badge rounded-pill bg-secondary">method</span> option allows us to do this, using a method such as <span class="badge rounded-pill bg-secondary">ffill</span>, which forward-fills the values:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-33.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>With DataFrame, <span class="badge rounded-pill bg-secondary">reindex</span> can alter either the (row) index, columns, or both. When passed only a sequence, it reindexes the rows in the result:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-34.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-35.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>The columns can be reindexed with the <span class="badge rounded-pill bg-secondary">columns</span> keyword:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-36.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-37.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>With DataFrame, index values can be deleted from either axis:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-38.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Calling <span class="badge rounded-pill bg-secondary">drop</span> with a sequence of labels will drop values from the row labels (axis 0):</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-39.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>You can drop values from the columns by passing <span class="badge rounded-pill bg-secondary">axis=1</span> or <span class="badge rounded-pill bg-secondary">axis='columns'</span>:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-40.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Many functions, like <span class="badge rounded-pill bg-secondary">drop</span>, which modify the size or shape of a Series or DataFrame, can manipulate an object <span class="badge rounded-pill bg-secondary">in-place</span> without returning a new object:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-41.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Series indexing <span class="badge rounded-pill bg-secondary">(obj[...])</span> works analogously to NumPy array indexing, except you can use the Series's index values instead of only integers:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-42.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-43.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Slicing with labels behaves differently than normal Python slicing in that the endpoint is inclusive:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-44.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-45.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-46.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Indexing like this has a few special cases. First, slicing or selecting data with a boolean array:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-47.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Another use case is in indexing with a boolean DataFrame, such as one produced by a scalar comparison:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-48.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>To select a subset of the rows and columns from a DataFrame with NumPy-like notation using either axis labels (<span class="badge rounded-pill bg-secondary">loc</span>) or integers (<span class="badge rounded-pill bg-secondary">iloc</span>):</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-49.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-50.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-51.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-52.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-53.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-54.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>In the case of DataFrame, alignment is performed on both the rows and the columns:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-55.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-56.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Since the 'c' and 'e' columns are not found in both DataFrame objects, they appear as all missing in the result. The same holds for the rows whose labels are not common to both objects.</p>
+                    <p>In arithmetic operations between differently indexed objects, you might want to fill with a special value, like 0, when an axis label is found in one object but not the other:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-57.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-58.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-59.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-60.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-61.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>By default, arithmetic between DataFrame and Series matches the index of the Series on the DataFrame's columns, broadcasting down the rows:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-62.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>If an index value is not found in either the DataFrame's columns or the Series's index, the objects will be reindexed to form the union:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-63.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>If you want to instead broadcast over the columns, matching on the rows, you have to use one of the arithmetic methods:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-64.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>NumPy ufuncs (element-wise array methods) also work with pandas objects:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-65.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-66.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Another frequent operation is applying a function on one-dimensional arrays to each column or row. DataFrame's <span class="badge rounded-pill bg-secondary">apply</span> method does exactly this:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-67.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>If you pass <span class="badge rounded-pill bg-secondary">axis='columns'</span> to apply, the function will be invoked once per row instead:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-68.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>The function passed to apply need not return a scalar value; it can also return a Series with multiple values:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-69.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-70.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Element-wise Python functions can be used, too. Suppose you wanted to compute a formatted string from each floating-point value in frame. You can do this with <span class="badge rounded-pill bg-secondary">applymap</span>:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-71.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>With a DataFrame, you can sort by index on either axis:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-72.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-73.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-74.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>To sort a Series by its values, use its <span class="badge rounded-pill bg-secondary">sort_values</span> method:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-75.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>Any missing values are sorted to the end of the Series by default:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-76.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>When sorting a DataFrame, you can use the data in one or more columns as the sort keys. To do so, pass one or more column names to the <span class="badge rounded-pill bg-secondary">by</span> option of <span class="badge rounded-pill bg-secondary">sort_values</span>:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-77.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-78.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-79.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-80.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>The index's <span class="badge rounded-pill bg-secondary">is_unique</span> property can tell you whether its labels are unique or not:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-81.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-82.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-83.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-84.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-85.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-86.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-87.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>NA values are excluded unless the entire slice (row or column in this case) is NA. This can be disabled with the <span class="badge rounded-pill bg-secondary">skipna</span> option:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-88.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-89.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-90.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-91.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>The unique values are not necessarily returned in sorted order, but could be sorted after the fact if needed (<span class="badge rounded-pill bg-secondary">uniques.sort()</span>). Relatedly, <span class="badge rounded-pill bg-secondary">value_counts</span> computes a Series containing value frequencies:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-92.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p>The Series is sorted by value in descending order as a convenience. <span class="badge rounded-pill bg-secondary">value_counts</span> is also available as a top-level pandas method that can be used with any array or sequence:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-93.PNG" class="mx-auto d-block" alt="Getting Started with pandas">
+                    <p><span class="badge rounded-pill bg-secondary">isin</span> performs a vectorized set membership check and can be useful in filtering a dataset down to a subset of values in a Series or column in a DataFrame:</p>
+                    <img src="../img/python-for-data-analysis/getting-started-with-pandas-94.PNG" class="mx-auto d-block" alt="Getting Started with pandas"><img src="../img/python-for-data-analysis/getting-started-with-pandas-95.PNG" class="mx-auto d-block" alt="Getting Started with pandas"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">Data Loading, Storage, and File Formats</button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                <div class="accordion-body"><img src="../img/python-for-data-analysis/data-loading-storage-and-file-formats-1.PNG" class="mx-auto d-block" alt="Data Loading, Storage, and File Formats"><img src="../img/python-for-data-analysis/data-loading-storage-and-file-formats-2.PNG" class="mx-auto d-block" alt="Data Loading, Storage, and File Formats"><img src="../img/python-for-data-analysis/data-loading-storage-and-file-formats-3.PNG" class="mx-auto d-block" alt="Data Loading, Storage, and File Formats"><img src="../img/python-for-data-analysis/data-loading-storage-and-file-formats-4.PNG" class="mx-auto d-block" alt="Data Loading, Storage, and File Formats"><img src="../img/python-for-data-analysis/data-loading-storage-and-file-formats-5.PNG" class="mx-auto d-block" alt="Data Loading, Storage, and File Formats"><img src="../img/python-for-data-analysis/data-loading-storage-and-file-formats-6.PNG" class="mx-auto d-block" alt="Data Loading, Storage, and File Formats"><img src="../img/python-for-data-analysis/data-loading-storage-and-file-formats-7.PNG" class="mx-auto d-block" alt="Data Loading, Storage, and File Formats"><img src="../img/python-for-data-analysis/data-loading-storage-and-file-formats-8.PNG" class="mx-auto d-block" alt="Data Loading, Storage, and File Formats"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">Data Cleaning and Preparation</button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>For numeric data, pandas uses the floating-point value <span class="badge rounded-pill bg-secondary">NaN</span> (Not a Number) to represent missing data. We call this a <span class="badge rounded-pill bg-secondary">sentinel value</span> that can be easily detected:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-1.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>The built-in Python <span class="badge rounded-pill bg-secondary">None</span> value is also treated as NA (<span class="badge rounded-pill bg-secondary">not available</span>) in object arrays:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-2.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>On a Series, <span class="badge rounded-pill bg-secondary">dropna</span> returns the Series with only the non-null data and index values:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-3.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>This is equivalent to:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-4.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>With DataFrame objects, things are a bit more complex. <span class="badge rounded-pill bg-secondary">dropna</span> by default drops any row containing a missing value:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-5.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Passing <span class="badge rounded-pill bg-secondary">how='all'</span> will only drop rows that are all NA:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-6.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-7.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>To drop columns in the same way, pass <span class="badge rounded-pill bg-secondary">axis=1</span>:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-8.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>A related way to filter out DataFrame rows tends to concern time series data. Suppose you want to keep only rows containing a certain number of observations. You can indicate this with the <span class="badge rounded-pill bg-secondary">thresh</span> argument:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-9.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-10.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Rather than filtering out missing data (and potentially discarding other data along with it), you may want to fill in the "holes" in any number of ways. Calling <span class="badge rounded-pill bg-secondary">fillna</span> with a constant replaces missing values with that value:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-11.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Calling <span class="badge rounded-pill bg-secondary">fillna</span> with a <span class="badge rounded-pill bg-secondary">dict</span>, you can use a different fill value for each column:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-12.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p><span class="badge rounded-pill bg-secondary">fillna</span> returns a new object, but you can modify the existing object <span class="badge rounded-pill bg-secondary">in-place</span>:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-13.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-14.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-15.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-16.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>The DataFrame method <span class="badge rounded-pill bg-secondary">duplicated</span> returns a boolean Series indicating whether each row is a duplicate (has been observed in a previous row) or not:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-17.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Relatedly, <span class="badge rounded-pill bg-secondary">drop_duplicates</span> returns a DataFrame where the duplicated array is False:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-18.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Both of these methods by default consider all of the columns; alternatively, you can specify any subset of them to detect duplicates. Suppose we had an additional column of values and wanted to filter duplicates only based on the 'k1' column:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-19.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p><span class="badge rounded-pill bg-secondary">duplicated</span> and <span class="badge rounded-pill bg-secondary">drop_duplicates</span> by default keep the first observed value combination. Passing <span class="badge rounded-pill bg-secondary">keep='last'</span> will return the last one:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-20.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-21.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-22.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Suppose you wanted to add a column indicating the type of animal that each food came from:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-23.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>The <span class="badge rounded-pill bg-secondary">map</span> method on a Series accepts a function or dict-like object containing a mapping, but here we have a small problem in that some of the meats are capitalized and others are not:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-24.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-25.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>We could also have passed a function that does all the work:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-26.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-27.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>The -999 values might be sentinel values for missing data. To replace these with NA values that pandas understands, we can use replace, producing a new Series (unless you pass inplace=True):</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-28.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-29.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>If you want to replace multiple values at once, you instead pass a list and then the substitute value:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-30.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>To use a different replacement for each value, pass a list of substitutes:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-31.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>The argument passed can also be a dict:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-32.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-33.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-34.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-35.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>If you want to create a transformed version of a dataset without modifying the original, a useful method is <span class="badge rounded-pill bg-secondary">rename</span>:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-36.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Notably, <span class="badge rounded-pill bg-secondary">rename</span> can be used in conjunction with a dict-like object providing new values for a subset of the axis labels:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-37.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p><span class="badge rounded-pill bg-secondary">rename</span> saves you from the chore of copying the DataFrame manually and assigning to its index and columns attributes. Should you wish to modify a dataset in-place, pass <span class="badge rounded-pill bg-secondary">inplace=True</span>:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-38.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-39.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Continuous data is often discretized or otherwise separated into "bins" for analysis. Suppose you have data about a group of people in a study, and you want to group them into discrete age buckets:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-40.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Let's divide these into bins of 18 to 25, 26 to 35, 36 to 60, and finally 61 and older. To do so, you have to use <span class="badge rounded-pill bg-secondary">cut</span>, a function in pandas:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-41.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>The object pandas returns is a special <span class="badge rounded-pill bg-secondary">Categorical</span> object. The output you see describes the bins computed by <span class="badge rounded-pill bg-secondary">pandas.cut</span>. You can treat it like an array of strings indicating the bin name; internally it contains a <span class="badge rounded-pill bg-secondary">categories</span> array specifying the distinct category names along with a labeling for the <span class="badge rounded-pill bg-secondary">ages</span> data in the <span class="badge rounded-pill bg-secondary">codes</span> attribute:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-42.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Note that <span class="badge rounded-pill bg-secondary">pd.value_counts(cats)</span> are the bin counts for the result of <span class="badge rounded-pill bg-secondary">pandas.cut</span>.</p>
+                    <p>Consistent with mathematical notation for intervals, a parenthesis means that the side is <span class="badge rounded-pill bg-secondary">open</span>, while the square bracket means it is <span class="badge rounded-pill bg-secondary">closed</span> (inclusive). You can change which side is closed by passing <span class="badge rounded-pill bg-secondary">right=False</span>:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-43.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>You can also pass your own bin names by passing a list or array to the <span class="badge rounded-pill bg-secondary">labels</span> option:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-44.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>If you pass an integer number of bins to <span class="badge rounded-pill bg-secondary">cut</span> instead of explicit bin edges, it will compute equal-length bins based on the minimum and maximum values in the data. Consider the case of some uniformly distributed data chopped into fourths:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-45.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>The <span class="badge rounded-pill bg-secondary">precision=2</span> option limits the decimal precision to two digits.</p>
+                    <p>A closely related function, <span class="badge rounded-pill bg-secondary">qcut</span>, bins the data based on sample quantiles. Depending on the distribution of the data, using cut will not usually result in each bin having the same number of data points. Since <span class="badge rounded-pill bg-secondary">qcut</span> uses sample quantiles instead, by definition you will obtain roughly equal-size bins:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-46.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-47.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Similar to <span class="badge rounded-pill bg-secondary">cut</span> you can pass your own quantiles (numbers between 0 and 1, inclusive):</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-48.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-49.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Suppose you wanted to find values in one of the columns exceeding 3 in absolute value:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-50.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>To select all rows having a value exceeding 3 or -3, you can use the any method on a boolean DataFrame:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-51.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Values can be set based on these criteria. Here is code to cap values outside the interval -3 to 3:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-52.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>The statement np.sign(data) produces 1 and -1 values based on whether the values in data are positive or negative:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-53.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Another type of transformation for statistical modeling or machine learning applications is converting a categorical variable into a <span class="badge rounded-pill bg-secondary">"dummy"</span> or <span class="badge rounded-pill bg-secondary">"indicator"</span> matrix.</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-54.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>You may want to add a prefix to the columns in the indicator DataFrame, which can then be merged with the other data:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-55.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-56.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Adding indicator variables for each genre requires a little bit of wrangling. First, we extract the list of unique genres in the dataset:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-57.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-58.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>One way to construct the indicator DataFrame is to start with a DataFrame of all zeros:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-59.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Now, iterate through each movie and set entries in each row of dummies to 1. To do this, we use the <span class="badge rounded-pill bg-secondary">dummies.columns</span> to compute the column indices for each genre:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-60.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Then, we can use <span class="badge rounded-pill bg-secondary">.iloc</span> to set values based on these indices:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-61.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Then, as before, you can combine this with movies:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-62.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>A useful recipe for statistical applications is to combine <span class="badge rounded-pill bg-secondary">get_dummies</span> with a discretization function like <span class="badge rounded-pill bg-secondary">cut</span>:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-63.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>A comma-separated string can be broken into pieces with <span class="badge rounded-pill bg-secondary">split</span>:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-64.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p><span class="badge rounded-pill bg-secondary">split</span> is often combined with <span class="badge rounded-pill bg-secondary">strip</span> to trim whitespace (including line breaks):</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-65.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>These substrings could be concatenated together with a two-colon delimiter using addition:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-66.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>But this isn't a practical generic method. A faster and more Pythonic way is to pass a list or tuple to the <span class="badge rounded-pill bg-secondary">join</span> method on the string '::':</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-67.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Other methods are concerned with locating substrings. Using Python's <span class="badge rounded-pill bg-secondary">in</span> keyword is the best way to detect a substring, though <span class="badge rounded-pill bg-secondary">index</span> and <span class="badge rounded-pill bg-secondary">find</span> can also be used:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-68.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Note the difference between <span class="badge rounded-pill bg-secondary">find</span> and <span class="badge rounded-pill bg-secondary">index</span> is that index raises an exception if the string isn't found (versus returning –1).</p>
+                    <p>Relatedly, <span class="badge rounded-pill bg-secondary">count</span> returns the number of occurrences of a particular substring:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-69.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p><span class="badge rounded-pill bg-secondary">replace</span> will substitute occurrences of one pattern for another. It is commonly used to delete patterns, too, by passing an empty string:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-70.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p><span class="badge rounded-pill bg-secondary">Regular expressions</span> provide a flexible way to search or match (often more complex) string patterns in text. A single expression, commonly called a <span class="badge rounded-pill bg-secondary">regex</span>, is a string formed according to the regular expression language.</p>
+                    <p>To split a string with a variable number of whitespace characters (tabs, spaces, and newlines):</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-71.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>When you call <span class="badge rounded-pill bg-secondary">re.split('\s+', text)</span>, the regular expression is first compiled, and then its <span class="badge rounded-pill bg-secondary">split</span> method is called on the passed text. You can compile the regex yourself with <span class="badge rounded-pill bg-secondary">re.compile</span>, forming a reusable regex object:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-72.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>If, instead, you wanted to get a list of all patterns matching the regex, you can use the <span class="badge rounded-pill bg-secondary">findall</span> method:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-73.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p><span class="badge rounded-pill bg-secondary">match</span> and <span class="badge rounded-pill bg-secondary">search</span> are closely related to <span class="badge rounded-pill bg-secondary">findall</span>. While <span class="badge rounded-pill bg-secondary">findall</span> returns all matches in a string, <span class="badge rounded-pill bg-secondary">search</span> returns only the first match. More rigidly, <span class="badge rounded-pill bg-secondary">match</span> only matches at the beginning of the string.</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-74.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-75.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p><span class="badge rounded-pill bg-secondary">search</span> returns a special match object for the first email address in the text. For the preceding regex, the match object can only tell us the start and end position of the pattern in the string:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-76.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p><span class="badge rounded-pill bg-secondary">regex.match</span> returns <span class="badge rounded-pill bg-secondary">None</span>, as it only will match if the pattern occurs at the start of the string:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-77.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>Relatedly, <span class="badge rounded-pill bg-secondary">sub</span> will return a new string with occurrences of the pattern replaced by the a new string:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-78.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>To find email addresses and simultaneously segment each address into its three components: username, domain name, and domain suffix, put parentheses around the parts of the pattern to segment:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-79.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p>A match object produced by this modified regex returns a tuple of the pattern components with its <span class="badge rounded-pill bg-secondary">groups</span> method:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-80.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p><span class="badge rounded-pill bg-secondary">findall</span> returns a list of tuples when the pattern has groups:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-81.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"><img src="../img/python-for-data-analysis/data-cleaning-and-preparation-82.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation">
+                    <p><span class="badge rounded-pill bg-secondary">sub</span> also has access to groups in each match using special symbols like <span class="badge rounded-pill bg-secondary">\1</span> and <span class="badge rounded-pill bg-secondary">\2</span>. The symbol \1 corresponds to the first matched group, \2 corresponds to the second, and so forth:</p>
+                    <img src="../img/python-for-data-analysis/data-cleaning-and-preparation-83.PNG" class="mx-auto d-block" alt="Data Cleaning and Preparation"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSeven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">Data Wrangling: Join, Combine, and Reshape</button>
+            </h2>
+            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p><span class="badge rounded-pill bg-secondary">Hierarchical indexing</span> is an important feature of pandas that enables you to have multiple (two or more) index levels on an axis.</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-1.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-2.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-3.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-4.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>Hierarchical indexing plays an important role in reshaping data and group-based operations like forming a pivot table. You could rearrange the data into a DataFrame using its <span class="badge rounded-pill bg-secondary">unstack</span> method:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-5.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-6.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>Unstacking might introduce missing data if all of the values in the level aren't found in each of the subgroups.</p>
+                    <p>The inverse operation of <span class="badge rounded-pill bg-secondary">unstack</span> is <span class="badge rounded-pill bg-secondary">stack</span>:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-7.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>With a DataFrame, either axis can have a hierarchical index:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-8.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>The hierarchical levels can have names (as strings or any Python objects):</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-9.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>With partial column indexing you can similarly select groups of columns:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-10.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>Many descriptive and summary statistics on DataFrame and Series have a <span class="badge rounded-pill bg-secondary">level</span> option in which you can specify the level you want to aggregate by on a particular axis:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-11.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-12.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>DataFrame's <span class="badge rounded-pill bg-secondary">set_index</span> function will create a new DataFrame using one or more of its columns as the index:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-13.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>By default the columns are removed from the DataFrame, though you can leave them in:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-14.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p><span class="badge rounded-pill bg-secondary">reset_index</span>, on the other hand, does the opposite of <span class="badge rounded-pill bg-secondary">set_index</span>; the hierarchical index levels are moved into the columns:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-15.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p><span class="badge rounded-pill bg-secondary">Merge</span> or <span class="badge rounded-pill bg-secondary">join</span> operations combine datasets by linking rows using one or more <span class="badge rounded-pill bg-secondary">keys</span>.</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-16.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-17.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>It's a good practice to specify which column to join on:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-18.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>If the column names are different in each object, you can specify them separately:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-19.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-20.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>You may notice that the 'c' and 'd' values and associated data are missing from the result. By default <span class="badge rounded-pill bg-secondary">merge</span> does an <span class="badge rounded-pill bg-secondary">'inner'</span> join; the keys in the result are the intersection, or the common set found in both tables. Other possible options are <span class="badge rounded-pill bg-secondary">'left'</span>, <span class="badge rounded-pill bg-secondary">'right'</span>, and <span class="badge rounded-pill bg-secondary">'outer'</span>. The outer join takes the union of the keys, combining the effect of applying both left and right joins:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-21.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-22.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-23.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>To merge with multiple keys, pass a list of column names:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-24.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-25.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>To determine which key combinations will appear in the result depending on the choice of merge method, think of the multiple keys as forming an array of tuples to be used as a single join key (even though it's not actually implemented that way).</p>
+                    <p>In some cases, the merge key(s) in a DataFrame will be found in its index. In this case, you can pass <span class="badge rounded-pill bg-secondary">left_index=True</span> or <span class="badge rounded-pill bg-secondary">right_index=True</span> (or both) to indicate that the index should be used as the merge key:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-26.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-27.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-28.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-29.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-30.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-31.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>Using the indexes of both sides of the merge is also possible:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-32.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-33.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>DataFrame has a convenient <span class="badge rounded-pill bg-secondary">join</span> instance for merging by index. It can also be used to combine together many DataFrame objects having the same or similar indexes but non-overlapping columns:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-34.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>In part for legacy reasons (i.e., much earlier versions of pandas), DataFrame's <span class="badge rounded-pill bg-secondary">join</span> method performs a left join on the join keys, exactly preserving the left frame's row index. It also supports joining the index of the passed DataFrame on one of the columns of the calling DataFrame:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-35.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>For simple index-on-index merges, you can pass a list of DataFrames to <span class="badge rounded-pill bg-secondary">join</span> as an alternative to using the more general <span class="badge rounded-pill bg-secondary">concat</span> function: <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-36.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-37.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-38.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>Calling <span class="badge rounded-pill bg-secondary">concat</span> with these objects in a list glues together the values and indexes:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-39.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>By default <span class="badge rounded-pill bg-secondary">concat</span> works along <span class="badge rounded-pill bg-secondary">axis=0</span>, producing another Series. If you pass <span class="badge rounded-pill bg-secondary">axis=1</span>, the result will instead be a DataFrame (<span class="badge rounded-pill bg-secondary">axis=1</span> is the columns):</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-40.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-41.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-42.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>You can even specify the axes to be used on the other axes with <span class="badge rounded-pill bg-secondary">join_axes</span>:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-43.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>To create a hierarchical index on the concatenation axis:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-44.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>In the case of combining Series along <span class="badge rounded-pill bg-secondary">axis=1</span>, the keys become the DataFrame column headers:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-45.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-46.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-47.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>If you pass a dict of objects instead of a list, the dict's keys will be used for the <span class="badge rounded-pill bg-secondary">keys</span> option:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-48.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>We can name the created axis levels with the <span class="badge rounded-pill bg-secondary">names</span> argument:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-49.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>DataFrames in which the row index does not contain any relevant data (you can pass <span class="badge rounded-pill bg-secondary">ignore_index=True</span>):</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-50.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-51.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-52.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape">
+                    <p>Series has a <span class="badge rounded-pill bg-secondary">combine_first</span> method, which performs the equivalent of this operation along with pandas's usual data alignment logic:</p>
+                    <img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-53.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"><img src="../img/python-for-data-analysis/data-wrangling-join-combine-and-reshape-54.PNG" class="mx-auto d-block" alt="Data Wrangling: Join, Combine, and Reshape"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingEight">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">Plotting and Visualization</button>
+            </h2>
+            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p><span class="badge rounded-pill bg-secondary"></span></p>
+                    <img src="../img/python-for-data-analysis/plotting-and-visualization-1.PNG" class="mx-auto d-block" alt="Plotting and Visualization"> </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingNine">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">Data Aggregation and Group Operations</button>
+            </h2>
+            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                <div class="accordion-body"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTen">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen">Time Series</button>
+            </h2>
+            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                <div class="accordion-body"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingEleven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="true" aria-controls="collapseEleven">Advanced pandas</button>
+            </h2>
+            <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
+                <div class="accordion-body"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwelve">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="true" aria-controls="collapseTwelve">Introduction to Modeling Libraries in Python</button>
+            </h2>
+            <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
+                <div class="accordion-body"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThirteen">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="true" aria-controls="collapseThirteen">Data Analysis Examples</button>
+            </h2>
+            <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#accordionExample">
+                <div class="accordion-body"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFourteen">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="true" aria-controls="collapseFourteen">Advanced NumPy</button>
+            </h2>
+            <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen" data-bs-parent="#accordionExample">
+                <div class="accordion-body"><img src="../img/python-for-data-analysis/advanced-numpy-1.PNG" class="mx-auto d-block" alt="Advanced NumPy"><img src="../img/python-for-data-analysis/advanced-numpy-2.PNG" class="mx-auto d-block" alt="Advanced NumPy">
+                    <p>One of the passed shape dimensions can be -1, in which case the value used for that dimension will be inferred from the data:</p>
+                    <img src="../img/python-for-data-analysis/advanced-numpy-3.PNG" class="mx-auto d-block" alt="Advanced NumPy">
+                    <p>The opposite operation of <span class="badge rounded-pill bg-secondary">reshape</span> from one-dimensional to a higher dimension is typically known as <span class="badge rounded-pill bg-secondary">flattening</span> or <span class="badge rounded-pill bg-secondary">raveling</span>:</p>
+                    <img src="../img/python-for-data-analysis/advanced-numpy-4.PNG" class="mx-auto d-block" alt="Advanced NumPy">
+                    <p><span class="badge rounded-pill bg-secondary">ravel</span> does not produce a copy of the underlying values if the values in the result were contiguous in the original array. The <span class="badge rounded-pill bg-secondary">flatten</span> method behaves like ravel except it always returns a copy of the data:</p>
+                    <img src="../img/python-for-data-analysis/advanced-numpy-5.PNG" class="mx-auto d-block" alt="Advanced NumPy">
+                    <p>NumPy gives you control and flexibility over the layout of your data in memory. By default, NumPy arrays are created in <span class="badge rounded-pill bg-secondary">row major</span> order. Spatially this means that if you have a two-dimensional array of data, the items in each row of the array are stored in adjacent memory locations. The alternative to row major ordering is <span class="badge rounded-pill bg-secondary">column major</span> order, which means that values within each column of data are stored in adjacent memory locations. For historical reasons, row and column major order are also know as <span class="badge rounded-pill bg-secondary">C</span> and <span class="badge rounded-pill bg-secondary">Fortran order</span>, respectively:</p>
+                    <img src="../img/python-for-data-analysis/advanced-numpy-6.PNG" class="mx-auto d-block" alt="Advanced NumPy">
+                    <p><span class="badge rounded-pill bg-secondary">numpy.concatenate</span> takes a sequence (tuple, list, etc.) of arrays and joins them together in order along the input axis:</p>
+                    <img src="../img/python-for-data-analysis/advanced-numpy-7.PNG" class="mx-auto d-block" alt="Advanced NumPy"><img src="../img/python-for-data-analysis/advanced-numpy-8.PNG" class="mx-auto d-block" alt="Advanced NumPy">
+                    <p>There are some convenience functions, like <span class="badge rounded-pill bg-secondary">vstack</span> and <span class="badge rounded-pill bg-secondary">hstack</span>, for common kinds of concatenation:</p>
+                    <img src="../img/python-for-data-analysis/advanced-numpy-9.PNG" class="mx-auto d-block" alt="Advanced NumPy">
+                    <p><span class="badge rounded-pill bg-secondary">split</span>, on the other hand, slices apart an array into multiple arrays along an axis:</p>
+                    <img src="../img/python-for-data-analysis/advanced-numpy-10.PNG" class="mx-auto d-block" alt="Advanced NumPy">
+                    <p>The value [1, 3] passed to np.split indicate the indices at which to split the array into pieces.</p>
+                    <p><span class="badge rounded-pill bg-secondary">repeat</span> replicates each element in an array some number of times, producing a larger array:</p>
+                    <img src="../img/python-for-data-analysis/advanced-numpy-11.PNG" class="mx-auto d-block" alt="Advanced NumPy"><img src="../img/python-for-data-analysis/advanced-numpy-12.PNG" class="mx-auto d-block" alt="Advanced NumPy">
+                    <p><span class="badge rounded-pill bg-secondary">Broadcasting</span> describes how arithmetic works between arrays of different shapes.</p>
+                    <img src="../img/python-for-data-analysis/advanced-numpy-13.PNG" class="mx-auto d-block" alt="Advanced NumPy">
+                    <p>Here we say that the scalar value 4 has been <span class="badge rounded-pill bg-secondary">broadcast</span> to all of the other elements in the multiplication operation.</p>
+                    <p>Two arrays are compatible for broadcasting if for each <span class="badge rounded-pill bg-secondary">trailing dimension</span> (i.e., starting from the end) the axis lengths match or if either of the lengths is 1. Broadcasting is then performed over the missing or length 1 dimensions.</p>
+                    <p>Broadcasting over axis 0 with a 1D array:</p>
+                    <img src="../img/python-for-data-analysis/advanced-numpy-14.PNG" class="mx-auto d-block" alt="Advanced NumPy">
+                    <p>Broadcasting over axis 1 of a 2D array:</p>
+                    <img src="../img/python-for-data-analysis/advanced-numpy-15.PNG" class="mx-auto d-block" alt="Advanced NumPy">
+                    <p>Broadcasting over axis 0 of a 3D array:</p>
+                    <img src="../img/python-for-data-analysis/advanced-numpy-16.PNG" class="mx-auto d-block" alt="Advanced NumPy"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFifteen">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="true" aria-controls="collapseFifteen">More on the IPython System</button>
+            </h2>
+            <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingFifteen" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p><span class="badge rounded-pill bg-secondary">%time</span> runs a statement once, reporting the total execution time:</p>
+                    <img src="../img/python-for-data-analysis/more-on-the-ipython-system-1.PNG" class="mx-auto d-block" alt="More on the IPython System"><img src="../img/python-for-data-analysis/more-on-the-ipython-system-2.PNG" class="mx-auto d-block" alt="More on the IPython System">
+                    <p>The <span class="badge rounded-pill bg-secondary">Wall time</span> (short for "wall-clock time") is the main number of interest. So, it looks like the first method takes more than twice as long, but it's not a very precise measurement. If you try <span class="badge rounded-pill bg-secondary">%time</span>-ing those statements multiple times yourself, you'll find that the results are somewhat variable. To get a more precise measurement, use the <span class="badge rounded-pill bg-secondary">%timeit</span> magic function. Given an arbitrary statement, it has a heuristic to run a statement multiple times to produce a more accurate average runtime:</p>
+                    <img src="../img/python-for-data-analysis/more-on-the-ipython-system-3.PNG" class="mx-auto d-block" alt="More on the IPython System"><img src="../img/python-for-data-analysis/more-on-the-ipython-system-4.PNG" class="mx-auto d-block" alt="More on the IPython System"><img src="../img/python-for-data-analysis/more-on-the-ipython-system-5.PNG" class="mx-auto d-block" alt="More on the IPython System"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/"></script> 
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
