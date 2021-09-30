@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Statistics for Data Science (University of Waterloo Professional Development)</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">Statistics for Data Science</h1>
+    <p class="text-end mb-5"><em>University of Waterloo Professional Development</em></p>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Introduction to Statistics for Data Science</button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p><a href="../docs/timeline-of-statistics.pdf" download>Timeline of statistics, PDF</a></p>
+                    <p><span class="badge rounded-pill bg-secondary">Statistics</span> is the study of how best to collect, analyze, and draw conclusions from data (identify the problem &#8594; collect relevant data &#8594; analyze the data &#8594; form a conclusion).</p>
+                    <p>Types of data:</p>
+                    <ul>
+                        <li><span class="badge rounded-pill bg-secondary">Quantitative</span> (or <span class="badge rounded-pill bg-secondary">numerical</span>) data deals with numbers and things you can measure objectively (dimensions such as height, width, and length; temperature and humidity; prices; area and volume).
+                            <ul>
+                                <li><span class="badge rounded-pill bg-secondary">Discrete</span> data is a count of something that cannot be made more precise. Typically, it involves integers (the number of children/adults/pets in your family; measured quantities; results of experiments; numerical values obtained by counting).</li>
+                                <li><span class="badge rounded-pill bg-secondary">Continuous</span> data can be divided and reduced to finer and finer levels (you can measure someone's height at progressively more precise scales - meters, centimeters, millimeters, and beyond; values obtained by measuring - e.g. height of all students; all values in a given interval of numbers - e.g. federal spending).</li>
+                            </ul>
+                        </li>
+                        <li><span class="badge rounded-pill bg-secondary">Qualitative</span> (or <span class="badge rounded-pill bg-secondary">categorical</span>) data deals with characteristics and descriptors that cannot be easily measured, but can be observed subjectively (personal tastes; textures; attractiveness; colour).
+                            <ul>
+                                <li><span class="badge rounded-pill bg-secondary">Ordinal</span> data: When items are assigned to categories that have some kind of implicit or natural order, such as "short, medium, or tall", the data is of ordinal nature. Another example is a survey question that asks us to rate an item on a 1 to 10 scale, with 10 being the best. This implies that 10 is better than 9, which is better than 8, and so on.</li>
+                                <li><span class="badge rounded-pill bg-secondary">Nominal</span> data: Any categorical data that doesn't have an order (e.g. "blue", "red", "green").</li>
+                                <li><span class="badge rounded-pill bg-secondary">Binary</span> data place things in one of two mutually exclusive categories: right/wrong, true/false, or accept/reject. It is nominal data but with only two distinct categories.</li>
+                            </ul>
+                        </li>
+                        <li><span class="badge rounded-pill bg-secondary">Other</span> non-numerical data such as text or video data.</li>
+                    </ul>
+                    <p>Broadly speaking, when you measure something and give it a number value, you create <span class="badge rounded-pill bg-secondary">quantitative</span> data. When you classify or judge something, you create <span class="badge rounded-pill bg-secondary">qualitative</span> data.</p>
+                    <p>Relationships between data:</p>
+                    <ul>
+                        <li><span class="badge rounded-pill bg-secondary">Independent variables</span>: If two variables are not associated, then they are said to be independent. That is, two variables are independent if there is no evident relationship between the two.</li>
+                        <li><span class="badge rounded-pill bg-secondary">Associated, or dependent</span>: When two variables show some connection with one another, they are called associated variables. Associated variables can also be called dependent variables and vice-versa.</li>
+                        <li><span class="badge rounded-pill bg-secondary">Positive association</span>: Two variables are said to be positively associated when they have a linear relationship with a positive slope. That means when the value of one variables increases, the value of the other variable increases as well. For example, the amount people spend is positively associated with the money people make, if we assume that people who earn more spend more.</li>
+                        <li><span class="badge rounded-pill bg-secondary">Negative association</span>: When the value of a variable goes down when the value of another variable goes up. This is often characterized by a downward trend when the variables are plotted.</li>
+                    </ul>
+                    <p>Scatterplots are a great tool to compare two sets of data:</p>
+                    <img src="../img/statistics-for-data-science/introduction-to-statistics-for-data-science-1.PNG" class="mx-auto d-block" alt="Introduction to Statistics for Data Science">
+                    <p>Variables:</p>
+                    <ul>
+                        <li>An <span class="badge rounded-pill bg-secondary">explanatory</span> variable is variable or a set of variables that can influence a response variable and/or explain changes in a response variable.</li>
+                        <li>A <span class="badge rounded-pill bg-secondary">response</span> variable is an observed variable.</li>
+                    </ul>
+                    <p>Is federal spending, on average, higher or lower in areas with high rates of poverty? If we suspect poverty might affect spending, then poverty is the explanatory variable and federal spending is the response variable in the relationship.</p>
+                    <p>Labeling variables as explanatory and response <span class="badge rounded-pill bg-secondary">does not guarantee</span> the relationship between them is causal, even if there is an association (also known as a <span class="badge rounded-pill bg-secondary">correlation</span>) between the two variables. The explanatory and response labels are only used to track how we suspect the variables affect each other. There may additional hidden variables which are responsible for the association. It is also important to note that causation is an <span class="badge rounded-pill bg-secondary">asymmetric</span> relation ("X causes Y" is a different statement than "Y causes X"), whereas correlation is a <span class="badge rounded-pill bg-secondary">symmetric</span> relation ("X is correlated with Y" is an equivalent statement to "Y is correlated with X").</p>
+                    <p>In statistics, a <span class="badge rounded-pill bg-secondary">confounding</span> variable is a variable that influences both the dependent variable and independent variable giving rise to a misleading association. Confounding is a causal concept and a confounding variable is also known as a <span class="badge rounded-pill bg-secondary">confounding factor</span>, a <span class="badge rounded-pill bg-secondary">lurking variable</span>, or a <span class="badge rounded-pill bg-secondary">confounder</span>. It is also a variable which is correlated with both the explanatory and response variables. For example, suppose some research tells us that using sunscreen actually increases skin cancer risk, so maybe there is another variable that can explain this hypothetical association between sunscreen usage and skin cancer. One important piece of information that is absent is sun exposure. If someone is out in the sun all day, they are more likely to use sunscreen and therefore are at a higher risk of developing skin cancer. Exposure to the sun is unaccounted for in the simple investigation. Hence, sun exposure is a confounding variable. One method to justify making causal conclusions from observational studies is to exhaust the search for confounding variables, but there is no guarantee that all confounding variables can be examined or measured.</p>
+                    <p>Confounding variables can arise for various reasons:</p>
+                    <ul>
+                        <li><span class="badge rounded-pill bg-secondary">Confounding by indication</span>: When evaluating the effect of a particular drug, many times people who take the drug differ from those who do not according to the medical indication for which the drug is prescribed.</li>
+                        <li><span class="badge rounded-pill bg-secondary">Selection bias</span>: Not everyone invited to participate in a study participates, causing imbalance between groups.</li>
+                        <li><span class="badge rounded-pill bg-secondary">Recall bias</span>: Not everyone with an exposure recalls their exposure history correctly, perhaps causing uneven recall in different groups.</li>
+                    </ul>
+                    <p>There are many other ways confounding variables can arise including unbalanced groups by chance - especially in smaller studies.</p>
+                    <p><span class="badge rounded-pill bg-secondary">Collinearity</span> (or <span class="badge rounded-pill bg-secondary">multicollinearity/ill-conditioning</span>) occurs when independent variables in a regression are so highly correlated that it becomes difficult or impossible to distinguish their individual effects on the dependent variable. Thus, collinearity can be viewed as an extreme case of confounding when, for example: the same variable is essentially entered into a regression equation twice, or when two variables contain exactly the same information as two other variables.</p>
+                    <p>Data collection:</p>
+                    <ul>
+                        <li><span class="badge rounded-pill bg-secondary">Observational studies</span> can provide evidence of a naturally occurring association between variables, but they cannot by themselves show a causal connection. For example, data may be collected via surveys, obtaining records (e.g. medical or company records), or by following a cohort of similar individuals as part of a study. In each of these situations, researchers merely observe the data as it arises. Hence, an observational study is conducted when data is collected in a way that does not directly interfere with how the data arises.</li>
+                        <li>When the possibility of a causal connection needs to be investigated, an <span class="badge rounded-pill bg-secondary">experiment</span> can be conducted. There are both explanatory and response variables in this case. To check if there really is a causal connection between the explanatory variable and the response, a sample of individuals are identified and split into groups. The individuals in each group are assigned a treatment. In statistics, a <span class="badge rounded-pill bg-secondary">treatment</span> is a generic term which refers to the specifics of how each group is handled for the purposes of an experiment. When individuals are randomly assigned to a group, the experiment is called a <span class="badge rounded-pill bg-secondary">randomized experiment</span>.</li>
+                    </ul>
+                    <p>In general, association does not imply causation, and causation can only be inferred from a randomized experiment.</p>
+                    <p>Generally, data in observational studies are collected only by monitoring what occurs, while experiments require the primary explanatory variable in a study be assigned for each subject by the researchers. Making causal conclusions based on experiments is often reasonable. However, making the same causal conclusions based on observational data can be unreliable and is not recommended. Thus, observational studies are generally only sufficient to show associations.</p>
+                    <div class="row">
+                        <div class="col-md"><img src="../img/statistics-for-data-science/introduction-to-statistics-for-data-science-2.PNG" class="mx-auto d-block" alt="Introduction to Statistics for Data Science"></div>
+                        <div class="col-md"><img src="../img/statistics-for-data-science/introduction-to-statistics-for-data-science-3.PNG" class="mx-auto d-block" alt="Introduction to Statistics for Data Science"></div>
+                        <div class="col-md"><img src="../img/statistics-for-data-science/introduction-to-statistics-for-data-science-4.PNG" class="mx-auto d-block" alt="Introduction to Statistics for Data Science"></div>
+                        <div class="col-md"><img src="../img/statistics-for-data-science/introduction-to-statistics-for-data-science-5.PNG" class="mx-auto d-block" alt="Introduction to Statistics for Data Science"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md"><img src="../img/statistics-for-data-science/introduction-to-statistics-for-data-science-6.PNG" class="mx-auto d-block" alt="Introduction to Statistics for Data Science"></div>
+                        <div class="col-md"><img src="../img/statistics-for-data-science/introduction-to-statistics-for-data-science-7.PNG" class="mx-auto d-block" alt="Introduction to Statistics for Data Science"></div>
+                    </div>
+                    <p>This is an experiment, as the researchers assigned the volunteers to a treatment group (beer or water).</p>
+                    <p>For hypothesis testing, many studies focus on the comparison of groups: In <span class="badge rounded-pill bg-secondary">observational studies</span>, the comparison focuses on the how the response variable differs between naturally occurring groups in a sample of the population under study. In <span class="badge rounded-pill bg-secondary">experiments</span>, the comparison focuses on how an attribute differs across treatment groups.</p>
+                    <p>Forms of observational studies:</p>
+                    <ul>
+                        <li>A <span class="badge rounded-pill bg-secondary">prospective study</span> identifies individuals and collects information as events unfold. In this case, it is required to make precise estimates of either the incidence of an outcome or likelihood of the outcome.</li>
+                        <li><span class="badge rounded-pill bg-secondary">Retrospective studies</span> collect data after events have taken place. A retrospective study looks backwards and examines factors in relation to an outcome that is established at the start of the study. Special care is to be taken to avoid sources of bias and confounding in retrospective studies.</li>
+                    </ul>
+                    <p>Studies where the researchers assign treatments to cases are called <span class="badge rounded-pill bg-secondary">experiments</span>. When this assignment includes randomization, we refer to them as <span class="badge rounded-pill bg-secondary">randomized experiments</span>. Randomized experiments are fundamentally important when trying to show a causal connection between two variables. They are generally built on four principles:</p>
+                    <ol>
+                        <li>
+                            <p><span class="badge rounded-pill bg-secondary">Controlling</span> differences in the group.</p>
+                            <p>Suppose a farmer wishes to evaluate a new fertilizer. She uses the new fertilizer on one field of crops (A), while using her current fertilizer on another field of crops (B). The irrigation system on field A has recently been repaired and provides adequate water to all of the crops, while the system on field B will not be repaired until next season. She concludes that the new fertilizer is far superior. The problem with this experiment is that the farmer has neglected to control for the effect of the differences in irrigation. This leads to <span class="badge rounded-pill bg-secondary">experimental bias</span>, the favoring of certain outcomes over others. To avoid this bias, the farmer should have tested the new fertilizer in identical conditions to the control group, which did not receive the treatment.</p>
+                        </li>
+                        <li>
+                            <p><span class="badge rounded-pill bg-secondary">Randomization</span> to account for variables that the researches cannot control.</p>
+                            <p>Generally speaking, it is extremely difficult for experimenters to eliminate bias using only their expert judgment, the use of randomization in experiments is common practice. In a randomized experimental design, objects or individuals are randomly assigned (by chance) to an experimental group. Using randomization is the most reliable method of creating <span class="badge rounded-pill bg-secondary">homogeneous treatment groups</span>, without involving any potential biases.</p>
+                        </li>
+                        <li>
+                            <p><span class="badge rounded-pill bg-secondary">Replication</span> by collecting a sufficiently large sample.</p>
+                            <p>Although randomization helps to ensure that treatment groups are as similar as possible, the results of a single experiment, applied to a small number of objects or subjects, should not be accepted without question. To improve the significance of an experimental result, replication, the repetition of an experiment on a large group of subjects, is required.</p>
+                        </li>
+                        <li>
+                            <p><span class="badge rounded-pill bg-secondary">Blocking</span> is used when the researchers know that other variables influence the response.</p>
+                            <p>Experimental subjects are first divided into homogeneous blocks before they are randomly assigned to a treatment group. If, for instance, an experimenter had reason to believe that age might be a significant factor in the effect of a given medication, he might choose to first divide the experimental subjects into age groups, such as under 30 years old, 30-60 years old, and over 60 years old. Then, within each age level, individuals would be assigned to treatment groups using a completely randomized design. In a block design, both control and randomization are considered.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Probability</button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body"> </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Distribution of Random Variables</button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body"> </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">Introduction to Statistical Inference</button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div class="accordion-body"> </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">Hypothesis Testing</button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                <div class="accordion-body"> </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">ANOVA, Goodness of Fit, and Bootstrapping</button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                <div class="accordion-body"> </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSeven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">Linear Regression</button>
+            </h2>
+            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                <div class="accordion-body"> </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingEight">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">Logistic Regression</button>
+            </h2>
+            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                <div class="accordion-body"> </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingNine">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">Time Series</button>
+            </h2>
+            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                <div class="accordion-body"> </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTen">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen">Introduction to Causal Inference Part 1</button>
+            </h2>
+            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                <div class="accordion-body"> </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingEleven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="true" aria-controls="collapseEleven">Introduction to Causal Inference Part 2</button>
+            </h2>
+            <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
+                <div class="accordion-body"> </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/"></script> 
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
